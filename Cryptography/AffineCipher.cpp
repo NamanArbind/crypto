@@ -1,14 +1,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 int modInverse(int a, int m) {
     a = a % m;
     for (int x = 1; x < m; x++)
         if ((a * x) % m == 1)
             return x;
 }
-
 string encrypt(string plain, int a, int b) {
     string cipher = "";
     for (int i = 0; i < plain.length(); i++) {
@@ -20,7 +18,6 @@ string encrypt(string plain, int a, int b) {
     }
     return cipher;
 }
-
 string decrypt(string cipher, int a, int b) {
     string plain = "";
     int a_inv = modInverse(a, 26);  
@@ -32,8 +29,6 @@ string decrypt(string cipher, int a, int b) {
     }
     return plain;
 }
-
- 
 int main() {
     string plain;
     int a;  
